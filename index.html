@@ -2,55 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSS Animation Effects</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Colorful Rain</title>
 </head>
 <body>
+    
 
 
- 
+    <script>
+        function rain(){
+            let amount = 100;
+            let body = document.querySelector('body')
+            let i = 0;
+        while(i< amount){
+            let drop  = document.createElement('i')
 
-
-
-    <div class="container">
-        <div class="bubbles">
-
-            <span style="--i:11;"></span>
-            <span style="--i:6;"></span>
-            <span style="--i:25;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:14;"></span>
-            <span style="--i:35;"></span>
-            <span style="--i:8;"></span>
-            <span style="--i:21;"></span>
-            <span style="--i:24;"></span>
-            <span style="--i:67"></span>
-            <span style="--i:16;"></span>
-            <span style="--i:22;"></span>
-            <span style="--i:18;"></span>
-            <span style="--i:23;"></span>
-            <span style="--i:9;"></span>
-            <span style="--i:32;"></span>
-            <span style="--i:27;"></span>
-            <span style="--i:4;"></span>
-            <span style="--i:13;"></span>
-            <span style="--i:19;"></span>
-            <span style="--i:22;"></span>
-            <span style="--i:7;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:28;"></span>
-            <span style="--i:5;"></span>
-            <span style="--i:15;"></span>    
-            <span style="--i:14;"></span>
-            <span style="--i:21;"></span>
-            <span style="--i:19;"></span>
-            <span style="--i:22;"></span>
-            <span style="--i:7;"></span>
-            <span style="--i:12;"></span>
-            <span style="--i:28;"></span>
-            <span style="--i:5;"></span>
+            let size = Math.random() * 5;
+            let posX = Math.floor(Math.random() * window.innerWidth);
+            let delay = Math.random() * -20;
+            let duration = Math.random() * 5;
             
-        </div>
-    </div>
+
+            drop.style.width = 0.2 + size+'px';
+            drop.style.left = posX + 'px';
+            drop.style.animationDelay = delay+'s';
+            drop.style.animationDuration = 1 + duration+'s';
+
+
+            body.appendChild(drop);
+            i++;
+        }
+
+        }
+        rain();
+
+    </script>
+    
 </body>
 </html>
